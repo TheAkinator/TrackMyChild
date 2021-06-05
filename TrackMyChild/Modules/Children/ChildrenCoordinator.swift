@@ -8,14 +8,14 @@
 import UIKit
 
 final class ChildrenCoordinator: BasicCoordinator {
-    private let children: [Child]
+    private let classroom: Classroom
 
-    init(children: [Child]) {
-        self.children = children
+    init(classroom: Classroom) {
+        self.classroom = classroom
     }
 
     override func start() {
-        let presenter = ChildrenPresenter(coordinator: self, children: children)
+        let presenter = ChildrenPresenter(coordinator: self, classroom: classroom)
         let viewController = ChildrenViewController(presenter: presenter)
         navigationController.delegate = self
         navigationController.pushViewController(viewController, animated: true)

@@ -15,12 +15,13 @@ struct Classroom {
         static let childrenKey = "children"
     }
 
+    var firebaseId: Int
     var id: String
     var name: String
     var icon: String
     var children: [Child]
 
-    init?(data: [String: Any]) {
+    init?(firebaseId: Int, data: [String: Any]) {
         guard
             let id = data[Constants.idKey] as? String,
             let name = data[Constants.nameKey] as? String,
@@ -30,9 +31,12 @@ struct Classroom {
             return nil
         }
 
+        self.firebaseId = firebaseId
         self.id = id
         self.name = name
         self.icon = icon
-        self.children = childrenData.compactMap { Child(data: $0) }
+        self.children = childrenData.enumerated().compactMap { index, child in
+            Child(firebaseId: index, data: child)
+        }
     }
 }

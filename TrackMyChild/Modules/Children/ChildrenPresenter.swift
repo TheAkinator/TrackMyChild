@@ -9,34 +9,32 @@ import UIKit
 
 protocol ChildrenPresenterProtocol {
     var children: [Child] { get }
-//    func fetchClassrooms()
+    func toogleCheckInFor(indexPath: IndexPath)
 }
 
 final class ChildrenPresenter: ChildrenPresenterProtocol {
     weak var coordinator: ChildrenCoordinator?
     weak var view: ChildrenViewProtocol?
     private let trackMyChildAPI: TrackMyChildAPIProtocol
-    var children: [Child]
+    var classroom: Classroom
 
     init(
         coordinator: ChildrenCoordinator,
-        children: [Child],
+        classroom: Classroom,
         trackMyChildAPI: TrackMyChildAPIProtocol = TrackMyChildAPI()
     ) {
         self.coordinator = coordinator
-        self.children = children
+        self.classroom = classroom
         self.trackMyChildAPI = trackMyChildAPI
     }
 
-//    func fetchClassrooms() {
-//        trackMyChildAPI.getClassrooms { [weak self] result in
-//            switch result {
-//            case .success(let classrooms):
-//                self?.classrooms = classrooms
-//                self?.view?.didFetchClassrooms()
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
+    var children: [Child] {
+        classroom.children
+    }
+
+    func toogleCheckInFor(indexPath: IndexPath) {
+        classroom.children[indexPath.row].checkedIn.toggle()
+        let child = classroom.children[indexPath.row]
+        trackMyChildAPI.setCheckInTo(child.checkedIn, for: child, in: classroom)
+    }
 }

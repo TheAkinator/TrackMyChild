@@ -75,6 +75,7 @@ extension ChildrenViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         let cell = tableView.cellForRow(at: indexPath) as? ChildCell
         cell?.toggleCheckIn()
+        presenter.toogleCheckInFor(indexPath: indexPath)
     }
 }
 

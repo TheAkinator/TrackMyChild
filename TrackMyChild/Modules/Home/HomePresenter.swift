@@ -40,7 +40,7 @@ final class HomePresenter: HomePresenterProtocol {
     }
 
     func didPressCellAt(indexPath: IndexPath) {
-        let children = classrooms[indexPath.row].children
-        coordinator?.navigateToChildren(with: children)
+        let classroom = classrooms[indexPath.row]
+        coordinator?.navigateToChildren(with: classroom)
     }
 }
