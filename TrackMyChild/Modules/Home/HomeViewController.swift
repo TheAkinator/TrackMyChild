@@ -18,5 +18,13 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        TrackMyChildAPI().getClassrooms { result in
+            switch result {
+            case .success(let classrooms):
+                print(classrooms)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }

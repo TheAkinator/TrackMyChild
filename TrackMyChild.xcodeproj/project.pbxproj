@@ -21,6 +21,10 @@
 		F4CD39A2266BAAF80042D417 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39A1266BAAF80042D417 /* Coordinator.swift */; };
 		F4CD39A4266BAB010042D417 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39A3266BAB010042D417 /* BaseViewController.swift */; };
 		F4CD39A6266BAB800042D417 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39A5266BAB800042D417 /* UIView+Extension.swift */; };
+		F4CD39A8266BB05A0042D417 /* TrackMyChildAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39A7266BB05A0042D417 /* TrackMyChildAPI.swift */; };
+		F4CD39AA266BB36D0042D417 /* Classroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39A9266BB36D0042D417 /* Classroom.swift */; };
+		F4CD39AC266BB3920042D417 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39AB266BB3920042D417 /* Child.swift */; };
+		F4CD39AE266BB8B90042D417 /* DatabaseReferenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39AD266BB8B90042D417 /* DatabaseReferenceProtocol.swift */; };
 		F831F386AEA0F752DB6395A6 /* Pods_TrackMyChild.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF616020EB3629B5F02BED7 /* Pods_TrackMyChild.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +72,10 @@
 		F4CD39A1266BAAF80042D417 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F4CD39A3266BAB010042D417 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F4CD39A5266BAB800042D417 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		F4CD39A7266BB05A0042D417 /* TrackMyChildAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackMyChildAPI.swift; sourceTree = "<group>"; };
+		F4CD39A9266BB36D0042D417 /* Classroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classroom.swift; sourceTree = "<group>"; };
+		F4CD39AB266BB3920042D417 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
+		F4CD39AD266BB8B90042D417 /* DatabaseReferenceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReferenceProtocol.swift; sourceTree = "<group>"; };
 		F538700E7806498FF72E7E5D /* Pods_TrackMyChild_TrackMyChildUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackMyChild_TrackMyChildUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -190,6 +198,8 @@
 		F4CD3996266BAA690042D417 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				F4CD39A7266BB05A0042D417 /* TrackMyChildAPI.swift */,
+				F4CD39AD266BB8B90042D417 /* DatabaseReferenceProtocol.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -206,6 +216,8 @@
 		F4CD3998266BAA8C0042D417 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F4CD39A9266BB36D0042D417 /* Classroom.swift */,
+				F4CD39AB266BB3920042D417 /* Child.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -485,12 +497,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4CD3963266BA1AF0042D417 /* AppDelegate.swift in Sources */,
+				F4CD39A8266BB05A0042D417 /* TrackMyChildAPI.swift in Sources */,
 				F4CD39A6266BAB800042D417 /* UIView+Extension.swift in Sources */,
 				F4CD39A2266BAAF80042D417 /* Coordinator.swift in Sources */,
 				F4CD39A0266BAAE70042D417 /* HomeCoordinator.swift in Sources */,
+				F4CD39AE266BB8B90042D417 /* DatabaseReferenceProtocol.swift in Sources */,
 				F4CD399C266BAAD60042D417 /* HomeViewController.swift in Sources */,
 				F4CD39A4266BAB010042D417 /* BaseViewController.swift in Sources */,
 				F4CD399E266BAADF0042D417 /* HomePresenter.swift in Sources */,
+				F4CD39AC266BB3920042D417 /* Child.swift in Sources */,
+				F4CD39AA266BB36D0042D417 /* Classroom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
