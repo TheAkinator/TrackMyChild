@@ -179,6 +179,7 @@
 				F4CD395B266BA1AF0042D417 /* Sources */,
 				F4CD395C266BA1AF0042D417 /* Frameworks */,
 				F4CD395D266BA1AF0042D417 /* Resources */,
+				F4CD3994266BA81B0042D417 /* ShellScript */,
 				1241ADF06F4C7C18349CE4E3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -399,6 +400,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TrackMyChild-TrackMyChildUITests/Pods-TrackMyChild-TrackMyChildUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		F4CD3994266BA81B0042D417 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

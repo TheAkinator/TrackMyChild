@@ -31,11 +31,15 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (1.2.12)
+  - SwiftLint (0.43.1)
 
 DEPENDENCIES:
   - Firebase/Database
+  - SwiftLint
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - SwiftLint
   trunk:
     - Firebase
     - FirebaseCore
@@ -57,7 +61,8 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: 9b7d2796fa45028ae74e20124653ac933ae00cb4
+PODFILE CHECKSUM: 34f8f9cb85c8e09a3032776c656f216bad58aa24
 
 COCOAPODS: 1.10.1

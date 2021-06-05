@@ -5,8 +5,8 @@
 //  Created by RAirApps on 05/06/21.
 //
 
-import UIKit
 import Firebase
+import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,5 +21,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-
-
