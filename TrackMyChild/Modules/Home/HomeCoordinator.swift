@@ -7,7 +7,11 @@
 
 import UIKit
 
-final class HomeCoordinator: BasicCoordinator {
+protocol HomeCoordinatorProtocol: BasicCoordinator {
+    func navigateToChildren(with children: [Child])
+}
+
+final class HomeCoordinator: BasicCoordinator, HomeCoordinatorProtocol {
     private var window: UIWindow
 
     init(window: UIWindow) {
@@ -22,5 +26,10 @@ final class HomeCoordinator: BasicCoordinator {
 
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+    }
+
+    func navigateToChildren(with children: [Child]) {
+        let coordinator = ChildrenCoordinator(children: children)
+        start(coordinator: coordinator)
     }
 }

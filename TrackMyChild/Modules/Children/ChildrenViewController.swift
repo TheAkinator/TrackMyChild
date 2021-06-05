@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  ChildrenViewController.swift
 //  TrackMyChild
 //
 //  Created by RAirApps on 05/06/21.
@@ -7,16 +7,16 @@
 
 import UIKit
 
-protocol HomeViewProtocol: AnyObject {
+protocol ChildrenViewProtocol: AnyObject {
     func didFetchClassrooms()
 }
 
-final class HomeViewController: BaseViewController {
+final class ChildrenViewController: BaseViewController {
     private enum Constants {
-        static let title = "Classrooms"
+        static let title = "Children"
     }
 
-    private var presenter: HomePresenterProtocol
+    private var presenter: ChildrenPresenterProtocol
 
     private lazy var tableView: UITableView = {
         var tableView: UITableView
@@ -28,15 +28,11 @@ final class HomeViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(ClassroomCell.self)
+        tableView.register(ChildCell.self)
         return tableView
     }()
 
-    private lazy var logoutButton: UIBarButtonItem = {
-        UIBarButtonItem(title: "logout", style: .plain, target: self, action: #selector(didPressLogout))
-    }()
-
-    init(presenter: HomePresenterProtocol) {
+    init(presenter: ChildrenPresenterProtocol) {
         self.presenter = presenter
         super.init()
     }
@@ -45,12 +41,10 @@ final class HomeViewController: BaseViewController {
         super.viewDidLoad()
         setupNavigationBar()
         setupViews()
-        presenter.fetchClassrooms()
     }
 
     private func setupNavigationBar() {
         title = Constants.title
-        navigationItem.leftBarButtonItem = logoutButton
     }
 
     private func setupViews() {
@@ -65,25 +59,26 @@ final class HomeViewController: BaseViewController {
     }
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension ChildrenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        presenter.classrooms.count
+        presenter.children.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as ClassroomCell
-        let classroom = presenter.classrooms[indexPath.row]
-        cell.presenter = ClassroomCellPresenter(classroom: classroom)
+        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as ChildCell
+        let child = presenter.children[indexPath.row]
+        cell.child = child
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        presenter.didPressCellAt(indexPath: indexPath)
+        let cell = tableView.cellForRow(at: indexPath) as? ChildCell
+        cell?.toggleCheckIn()
     }
 }
 
-extension HomeViewController: HomeViewProtocol {
+extension ChildrenViewController: HomeViewProtocol {
     func didFetchClassrooms() {
         tableView.reloadData()
     }

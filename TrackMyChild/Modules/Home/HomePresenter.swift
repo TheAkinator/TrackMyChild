@@ -10,16 +10,17 @@ import UIKit
 protocol HomePresenterProtocol {
     var classrooms: [Classroom] { get }
     func fetchClassrooms()
+    func didPressCellAt(indexPath: IndexPath)
 }
 
 final class HomePresenter: HomePresenterProtocol {
-    weak var coordinator: HomeCoordinator?
+    weak var coordinator: HomeCoordinatorProtocol?
     weak var view: HomeViewProtocol?
     private let trackMyChildAPI: TrackMyChildAPIProtocol
     var classrooms: [Classroom] = []
 
     init(
-        coordinator: HomeCoordinator,
+        coordinator: HomeCoordinatorProtocol,
         trackMyChildAPI: TrackMyChildAPIProtocol = TrackMyChildAPI()
     ) {
         self.coordinator = coordinator
@@ -27,7 +28,7 @@ final class HomePresenter: HomePresenterProtocol {
     }
 
     func fetchClassrooms() {
-        trackMyChildAPI.getClassrooms { [weak self] result in
+        trackMyChildAPI.fetchClassrooms { [weak self] result in
             switch result {
             case .success(let classrooms):
                 self?.classrooms = classrooms
@@ -36,5 +37,10 @@ final class HomePresenter: HomePresenterProtocol {
                 print(error.localizedDescription)
             }
         }
+    }
+
+    func didPressCellAt(indexPath: IndexPath) {
+        let children = classrooms[indexPath.row].children
+        coordinator?.navigateToChildren(with: children)
     }
 }

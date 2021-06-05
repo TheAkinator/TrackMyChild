@@ -8,7 +8,7 @@
 import Firebase
 
 protocol TrackMyChildAPIProtocol {
-    func getClassrooms(completion: @escaping (Result<[Classroom], Error>) -> Void)
+    func fetchClassrooms(completion: @escaping (Result<[Classroom], Error>) -> Void)
 }
 
 final class TrackMyChildAPI: TrackMyChildAPIProtocol {
@@ -24,7 +24,7 @@ final class TrackMyChildAPI: TrackMyChildAPIProtocol {
         self.databaseReference = databaseReference
     }
 
-    func getClassrooms(completion: @escaping (Result<[Classroom], Error>) -> Void) {
+    func fetchClassrooms(completion: @escaping (Result<[Classroom], Error>) -> Void) {
         databaseReference
             .child(Constants.data)
             .child(Constants.center)
