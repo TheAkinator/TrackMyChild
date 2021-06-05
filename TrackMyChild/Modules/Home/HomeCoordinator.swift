@@ -17,6 +17,7 @@ final class HomeCoordinator: BasicCoordinator {
     override func start() {
         let presenter = HomePresenter(coordinator: self)
         let viewController = HomeViewController(presenter: presenter)
+        presenter.view = viewController
         navigationController.viewControllers = [viewController]
 
         window.rootViewController = navigationController

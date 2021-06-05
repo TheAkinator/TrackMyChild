@@ -25,6 +25,17 @@
 		F4CD39AA266BB36D0042D417 /* Classroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39A9266BB36D0042D417 /* Classroom.swift */; };
 		F4CD39AC266BB3920042D417 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39AB266BB3920042D417 /* Child.swift */; };
 		F4CD39AE266BB8B90042D417 /* DatabaseReferenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39AD266BB8B90042D417 /* DatabaseReferenceProtocol.swift */; };
+		F4CD39B1266BBABA0042D417 /* ClassroomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39B0266BBABA0042D417 /* ClassroomCell.swift */; };
+		F4CD39B3266BBADF0042D417 /* BaseUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39B2266BBADF0042D417 /* BaseUITableViewCell.swift */; };
+		F4CD39B5266BBCCE0042D417 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39B4266BBCCE0042D417 /* UITableView+Extension.swift */; };
+		F4CD39B8266BC2490042D417 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39B7266BC2490042D417 /* ImageFetcher.swift */; };
+		F4CD39BA266BC2630042D417 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39B9266BC2630042D417 /* RequestError.swift */; };
+		F4CD39BC266BC2820042D417 /* URLResponse+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39BB266BC2820042D417 /* URLResponse+Extension.swift */; };
+		F4CD39C0266BC3100042D417 /* ClassroomCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39BF266BC3100042D417 /* ClassroomCellPresenter.swift */; };
+		F4CD39C3266BC6010042D417 /* ChildrenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39C2266BC6010042D417 /* ChildrenViewController.swift */; };
+		F4CD39C5266BC60C0042D417 /* ChildrenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39C4266BC60C0042D417 /* ChildrenPresenter.swift */; };
+		F4CD39C7266BC6160042D417 /* ChildrenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39C6266BC6160042D417 /* ChildrenCoordinator.swift */; };
+		F4CD39CA266BC62C0042D417 /* ChildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39C9266BC62C0042D417 /* ChildCell.swift */; };
 		F831F386AEA0F752DB6395A6 /* Pods_TrackMyChild.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF616020EB3629B5F02BED7 /* Pods_TrackMyChild.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +87,17 @@
 		F4CD39A9266BB36D0042D417 /* Classroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classroom.swift; sourceTree = "<group>"; };
 		F4CD39AB266BB3920042D417 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		F4CD39AD266BB8B90042D417 /* DatabaseReferenceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReferenceProtocol.swift; sourceTree = "<group>"; };
+		F4CD39B0266BBABA0042D417 /* ClassroomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassroomCell.swift; sourceTree = "<group>"; };
+		F4CD39B2266BBADF0042D417 /* BaseUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITableViewCell.swift; sourceTree = "<group>"; };
+		F4CD39B4266BBCCE0042D417 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		F4CD39B7266BC2490042D417 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
+		F4CD39B9266BC2630042D417 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		F4CD39BB266BC2820042D417 /* URLResponse+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLResponse+Extension.swift"; sourceTree = "<group>"; };
+		F4CD39BF266BC3100042D417 /* ClassroomCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassroomCellPresenter.swift; sourceTree = "<group>"; };
+		F4CD39C2266BC6010042D417 /* ChildrenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenViewController.swift; sourceTree = "<group>"; };
+		F4CD39C4266BC60C0042D417 /* ChildrenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenPresenter.swift; sourceTree = "<group>"; };
+		F4CD39C6266BC6160042D417 /* ChildrenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenCoordinator.swift; sourceTree = "<group>"; };
+		F4CD39C9266BC62C0042D417 /* ChildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCell.swift; sourceTree = "<group>"; };
 		F538700E7806498FF72E7E5D /* Pods_TrackMyChild_TrackMyChildUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackMyChild_TrackMyChildUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -191,6 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				F4CD39A5266BAB800042D417 /* UIView+Extension.swift */,
+				F4CD39B4266BBCCE0042D417 /* UITableView+Extension.swift */,
+				F4CD39BB266BC2820042D417 /* URLResponse+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -198,8 +222,9 @@
 		F4CD3996266BAA690042D417 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				F4CD39A7266BB05A0042D417 /* TrackMyChildAPI.swift */,
-				F4CD39AD266BB8B90042D417 /* DatabaseReferenceProtocol.swift */,
+				F4CD39B6266BC2370042D417 /* TrackMyChildAPI */,
+				F4CD39B7266BC2490042D417 /* ImageFetcher.swift */,
+				F4CD39B9266BC2630042D417 /* RequestError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -209,6 +234,7 @@
 			children = (
 				F4CD39A1266BAAF80042D417 /* Coordinator.swift */,
 				F4CD39A3266BAB010042D417 /* BaseViewController.swift */,
+				F4CD39B2266BBADF0042D417 /* BaseUITableViewCell.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -226,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				F4CD399A266BAACB0042D417 /* Home */,
+				F4CD39C1266BC5E10042D417 /* Children */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -233,11 +260,49 @@
 		F4CD399A266BAACB0042D417 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F4CD39AF266BBAAD0042D417 /* Cells */,
 				F4CD399B266BAAD60042D417 /* HomeViewController.swift */,
 				F4CD399D266BAADF0042D417 /* HomePresenter.swift */,
 				F4CD399F266BAAE70042D417 /* HomeCoordinator.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		F4CD39AF266BBAAD0042D417 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F4CD39B0266BBABA0042D417 /* ClassroomCell.swift */,
+				F4CD39BF266BC3100042D417 /* ClassroomCellPresenter.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F4CD39B6266BC2370042D417 /* TrackMyChildAPI */ = {
+			isa = PBXGroup;
+			children = (
+				F4CD39A7266BB05A0042D417 /* TrackMyChildAPI.swift */,
+				F4CD39AD266BB8B90042D417 /* DatabaseReferenceProtocol.swift */,
+			);
+			path = TrackMyChildAPI;
+			sourceTree = "<group>";
+		};
+		F4CD39C1266BC5E10042D417 /* Children */ = {
+			isa = PBXGroup;
+			children = (
+				F4CD39C8266BC6210042D417 /* Cells */,
+				F4CD39C2266BC6010042D417 /* ChildrenViewController.swift */,
+				F4CD39C4266BC60C0042D417 /* ChildrenPresenter.swift */,
+				F4CD39C6266BC6160042D417 /* ChildrenCoordinator.swift */,
+			);
+			path = Children;
+			sourceTree = "<group>";
+		};
+		F4CD39C8266BC6210042D417 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F4CD39C9266BC62C0042D417 /* ChildCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,17 +561,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4CD39BA266BC2630042D417 /* RequestError.swift in Sources */,
 				F4CD3963266BA1AF0042D417 /* AppDelegate.swift in Sources */,
 				F4CD39A8266BB05A0042D417 /* TrackMyChildAPI.swift in Sources */,
 				F4CD39A6266BAB800042D417 /* UIView+Extension.swift in Sources */,
+				F4CD39C7266BC6160042D417 /* ChildrenCoordinator.swift in Sources */,
 				F4CD39A2266BAAF80042D417 /* Coordinator.swift in Sources */,
 				F4CD39A0266BAAE70042D417 /* HomeCoordinator.swift in Sources */,
+				F4CD39B1266BBABA0042D417 /* ClassroomCell.swift in Sources */,
 				F4CD39AE266BB8B90042D417 /* DatabaseReferenceProtocol.swift in Sources */,
 				F4CD399C266BAAD60042D417 /* HomeViewController.swift in Sources */,
 				F4CD39A4266BAB010042D417 /* BaseViewController.swift in Sources */,
+				F4CD39C0266BC3100042D417 /* ClassroomCellPresenter.swift in Sources */,
+				F4CD39C3266BC6010042D417 /* ChildrenViewController.swift in Sources */,
+				F4CD39B8266BC2490042D417 /* ImageFetcher.swift in Sources */,
+				F4CD39B5266BBCCE0042D417 /* UITableView+Extension.swift in Sources */,
+				F4CD39BC266BC2820042D417 /* URLResponse+Extension.swift in Sources */,
+				F4CD39CA266BC62C0042D417 /* ChildCell.swift in Sources */,
 				F4CD399E266BAADF0042D417 /* HomePresenter.swift in Sources */,
 				F4CD39AC266BB3920042D417 /* Child.swift in Sources */,
 				F4CD39AA266BB36D0042D417 /* Classroom.swift in Sources */,
+				F4CD39B3266BBADF0042D417 /* BaseUITableViewCell.swift in Sources */,
+				F4CD39C5266BC60C0042D417 /* ChildrenPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
