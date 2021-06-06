@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class ChildrenCoordinator: BasicCoordinator {
+protocol ChildrenCoordinatorProtocol: BasicCoordinator { }
+
+final class ChildrenCoordinator: BasicCoordinator, ChildrenCoordinatorProtocol {
     private let currentClassroom: Classroom
     private let allClassrooms: [Classroom]
     private let currentnavigationController: UINavigationController

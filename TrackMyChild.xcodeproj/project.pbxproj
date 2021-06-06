@@ -21,6 +21,9 @@
 		F48B153E266D2F5800B90031 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B153D266D2F5800B90031 /* HomePresenterTests.swift */; };
 		F48B1540266D2FB300B90031 /* HomeCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B153F266D2FB300B90031 /* HomeCoordinatorMock.swift */; };
 		F48B1542266D302100B90031 /* HomeViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B1541266D302100B90031 /* HomeViewControllerMock.swift */; };
+		F48B1545266D3D0B00B90031 /* ChildrenPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B1544266D3D0B00B90031 /* ChildrenPresenterTests.swift */; };
+		F48B1548266D3D4F00B90031 /* ChildrenViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B1547266D3D4F00B90031 /* ChildrenViewControllerMock.swift */; };
+		F48B154E266D3EE700B90031 /* ChildrenCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B154D266D3EE700B90031 /* ChildrenCoordinatorMock.swift */; };
 		F4CD3963266BA1AF0042D417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD3962266BA1AF0042D417 /* AppDelegate.swift */; };
 		F4CD396C266BA1B10042D417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4CD396B266BA1B10042D417 /* Assets.xcassets */; };
 		F4CD396F266BA1B10042D417 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4CD396D266BA1B10042D417 /* LaunchScreen.storyboard */; };
@@ -95,6 +98,9 @@
 		F48B153D266D2F5800B90031 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 		F48B153F266D2FB300B90031 /* HomeCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorMock.swift; sourceTree = "<group>"; };
 		F48B1541266D302100B90031 /* HomeViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerMock.swift; sourceTree = "<group>"; };
+		F48B1544266D3D0B00B90031 /* ChildrenPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenPresenterTests.swift; sourceTree = "<group>"; };
+		F48B1547266D3D4F00B90031 /* ChildrenViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenViewControllerMock.swift; sourceTree = "<group>"; };
+		F48B154D266D3EE700B90031 /* ChildrenCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenCoordinatorMock.swift; sourceTree = "<group>"; };
 		F4CD395F266BA1AF0042D417 /* TrackMyChild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackMyChild.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CD3962266BA1AF0042D417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4CD396B266BA1B10042D417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,6 +224,8 @@
 		F48B1530266D15D300B90031 /* Children */ = {
 			isa = PBXGroup;
 			children = (
+				F48B1546266D3D1600B90031 /* Mocks */,
+				F48B1544266D3D0B00B90031 /* ChildrenPresenterTests.swift */,
 			);
 			path = Children;
 			sourceTree = "<group>";
@@ -236,6 +244,24 @@
 			children = (
 				F48B153F266D2FB300B90031 /* HomeCoordinatorMock.swift */,
 				F48B1541266D302100B90031 /* HomeViewControllerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		F48B1543266D3CEF00B90031 /* CommonMocks */ = {
+			isa = PBXGroup;
+			children = (
+				F48B1536266D166600B90031 /* TrackMyChildAPIMock.swift */,
+				F48B1534266D165A00B90031 /* StorageMock.swift */,
+			);
+			path = CommonMocks;
+			sourceTree = "<group>";
+		};
+		F48B1546266D3D1600B90031 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				F48B1547266D3D4F00B90031 /* ChildrenViewControllerMock.swift */,
+				F48B154D266D3EE700B90031 /* ChildrenCoordinatorMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -284,8 +310,7 @@
 		F4CD3978266BA1B10042D417 /* TrackMyChildTests */ = {
 			isa = PBXGroup;
 			children = (
-				F48B1536266D166600B90031 /* TrackMyChildAPIMock.swift */,
-				F48B1534266D165A00B90031 /* StorageMock.swift */,
+				F48B1543266D3CEF00B90031 /* CommonMocks */,
 				F48B1530266D15D300B90031 /* Children */,
 				F48B152F266D15CD00B90031 /* Home */,
 				F48B152E266D15C800B90031 /* Login */,
@@ -723,10 +748,13 @@
 				F48B1542266D302100B90031 /* HomeViewControllerMock.swift in Sources */,
 				F48B1532266D15E300B90031 /* LoginPresenterTests.swift in Sources */,
 				F48B1540266D2FB300B90031 /* HomeCoordinatorMock.swift in Sources */,
+				F48B1548266D3D4F00B90031 /* ChildrenViewControllerMock.swift in Sources */,
 				F48B153E266D2F5800B90031 /* HomePresenterTests.swift in Sources */,
 				F48B1535266D165A00B90031 /* StorageMock.swift in Sources */,
+				F48B1545266D3D0B00B90031 /* ChildrenPresenterTests.swift in Sources */,
 				F48B1539266D17FF00B90031 /* LoginCoordinatorMock.swift in Sources */,
 				F48B1537266D166600B90031 /* TrackMyChildAPIMock.swift in Sources */,
+				F48B154E266D3EE700B90031 /* ChildrenCoordinatorMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

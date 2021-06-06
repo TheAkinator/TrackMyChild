@@ -75,6 +75,8 @@ final class TrackMyChildAPIMock: TrackMyChildAPIProtocol {
         return Classroom(data: data)!
     }
 
+    var didToogleCheckin: (() -> Void)?
+
     func fetchTeacherInfosFor(id: String, completion: @escaping (Result<Teacher, Error>) -> Void) {
         if id == "teacher-0" {
             completion(.success(teacher0))
@@ -93,8 +95,10 @@ final class TrackMyChildAPIMock: TrackMyChildAPIProtocol {
     }
 
     func setCheckInTo(_ checkedIn: Bool, for child: Child, in classroom: Classroom) {
+        didToogleCheckin?()
     }
 
     func move(child: Child, from sourceClassroom: Classroom, to targetClassroom: Classroom, completion: @escaping () -> Void) {
+        completion()
     }
 }

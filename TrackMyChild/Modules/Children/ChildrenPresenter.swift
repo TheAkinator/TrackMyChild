@@ -17,14 +17,14 @@ protocol ChildrenPresenterProtocol {
 }
 
 final class ChildrenPresenter: ChildrenPresenterProtocol {
-    weak var coordinator: ChildrenCoordinator?
+    weak var coordinator: ChildrenCoordinatorProtocol?
     weak var view: ChildrenViewProtocol?
     private let trackMyChildAPI: TrackMyChildAPIProtocol
     private var currentClassroom: Classroom
     private var allClassrooms: [Classroom]
 
     init(
-        coordinator: ChildrenCoordinator,
+        coordinator: ChildrenCoordinatorProtocol,
         currentClassroom: Classroom,
         allClassrooms: [Classroom],
         trackMyChildAPI: TrackMyChildAPIProtocol = TrackMyChildAPI()
