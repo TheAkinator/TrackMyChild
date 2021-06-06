@@ -19,4 +19,8 @@ enum Images {
     static var fullCheckBox: UIImage {
         UIImage(named: "fullCheckBox") ?? UIImage()
     }
+
+    static var background: UIImage {
+        UIImage(named: "background") ?? UIImage()
+    }
 }

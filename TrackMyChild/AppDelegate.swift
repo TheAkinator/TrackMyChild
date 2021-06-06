@@ -11,7 +11,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    private var homeCoordinator: HomeCoordinator?
+    private var loginCoordinator: LoginCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseConfiguration.shared.setLoggerLevel(.min)
@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
-        homeCoordinator = HomeCoordinator(window: window)
-        homeCoordinator?.start()
+        loginCoordinator = LoginCoordinator(window: window)
+        loginCoordinator?.start()
 
         return true
     }

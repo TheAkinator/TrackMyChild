@@ -8,7 +8,7 @@ target 'TrackMyChild' do
   # Pods for TrackMyChild
   pod 'Firebase/Database'
   pod 'SwiftLint'
-
+  
   target 'TrackMyChildTests' do
     inherit! :search_paths
     # Pods for testing

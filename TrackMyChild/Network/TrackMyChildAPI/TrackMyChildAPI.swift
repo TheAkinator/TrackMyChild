@@ -8,7 +8,8 @@
 import Firebase
 
 protocol TrackMyChildAPIProtocol {
-    func fetchClassrooms(completion: @escaping (Result<[Classroom], Error>) -> Void)
+    func fetchTeacherInfosFor(id: String, completion: @escaping (Result<Teacher, Error>) -> Void)
+    func fetchClassrooms(classroomsId: [String], completion: @escaping (Result<[Classroom], Error>) -> Void)
     func setCheckInTo(_ checkedIn: Bool, for child: Child, in classroom: Classroom)
     func move(
         child: Child,
@@ -38,7 +39,26 @@ final class TrackMyChildAPI: TrackMyChildAPIProtocol {
         databaseReference.removeAllObservers()
     }
 
-    func fetchClassrooms(completion: @escaping (Result<[Classroom], Error>) -> Void) {
+    func fetchTeacherInfosFor(id: String, completion: @escaping (Result<Teacher, Error>) -> Void) {
+        databaseReference
+            .child(Constants.data)
+            .child(Constants.center)
+            .child(Constants.teachers)
+            .child(id)
+            .getData { error, snapshot in
+                if let error = error {
+                    completion(.failure(error))
+                }
+                guard let teacherData = snapshot.value as? [String: Any] else {
+                    completion(.failure(RequestError.invalidId))
+                    return
+                }
+                let teacher = Teacher(id: id, data: teacherData)
+                completion(.success(teacher))
+            }
+    }
+
+    func fetchClassrooms(classroomsId: [String], completion: @escaping (Result<[Classroom], Error>) -> Void) {
         databaseReference
             .child(Constants.data)
             .child(Constants.center)
@@ -48,9 +68,8 @@ final class TrackMyChildAPI: TrackMyChildAPIProtocol {
                     return
                 }
 
-                var classrooms = classroomsData.compactMap { classroomData in
-                    Classroom(data: classroomData)
-                }
+                var classrooms = classroomsData.compactMap { Classroom(data: $0) }
+                classrooms = classrooms.filter { classroomsId.contains($0.id) }
                 classrooms = classrooms.sorted { $0.name < $1.name }
                 completion(.success(classrooms))
             }

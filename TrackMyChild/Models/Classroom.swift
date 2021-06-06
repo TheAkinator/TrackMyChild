@@ -33,9 +33,7 @@ struct Classroom {
         self.id = id
         self.name = name
         self.icon = icon
-        var children = childrenData?.compactMap { childData in
-            Child(data: childData)
-        }
+        var children = childrenData?.compactMap { Child(data: $0) }
         children = children?.sorted { $0.fullName < $1.fullName }
         self.children = children
     }

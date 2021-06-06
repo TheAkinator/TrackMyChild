@@ -12,24 +12,25 @@ protocol HomeCoordinatorProtocol: BasicCoordinator {
 }
 
 final class HomeCoordinator: BasicCoordinator, HomeCoordinatorProtocol {
-    private var window: UIWindow
-
-    init(window: UIWindow) {
-        self.window = window
-    }
+    private var currentNavigationController: UINavigationController?
 
     override func start() {
         let presenter = HomePresenter(coordinator: self)
         let viewController = HomeViewController(presenter: presenter)
         presenter.view = viewController
-        navigationController.viewControllers = [viewController]
-
-        window.rootViewController = navigationController
-        window.makeKeyAndVisible()
+        let navigation = UINavigationController(rootViewController: viewController)
+        navigation.modalPresentationStyle = .fullScreen
+        currentNavigationController = navigation
+        navigationController.present(navigation, animated: true, completion: nil)
     }
 
     func navigateToChildren(with selectedClassroom: Classroom, allClassrooms: [Classroom]) {
-        let coordinator = ChildrenCoordinator(currentClassroom: selectedClassroom, allClassrooms: allClassrooms)
+        guard let currentNavigationController = currentNavigationController else { return }
+        let coordinator = ChildrenCoordinator(
+            navigationController: currentNavigationController,
+            currentClassroom: selectedClassroom,
+            allClassrooms: allClassrooms
+        )
         start(coordinator: coordinator)
     }
 }

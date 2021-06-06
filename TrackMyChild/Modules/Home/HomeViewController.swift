@@ -14,6 +14,7 @@ protocol HomeViewProtocol: AnyObject {
 final class HomeViewController: BaseViewController {
     private enum Constants {
         static let title = "Classrooms"
+        static let logout = "logout"
     }
 
     private var presenter: HomePresenterProtocol
@@ -40,7 +41,7 @@ final class HomeViewController: BaseViewController {
     }()
 
     private lazy var logoutButton: UIBarButtonItem = {
-        UIBarButtonItem(title: "logout", style: .plain, target: self, action: #selector(didPressLogout))
+        UIBarButtonItem(title: Constants.logout, style: .plain, target: self, action: #selector(didPressLogout))
     }()
 
     init(presenter: HomePresenterProtocol) {
@@ -74,6 +75,7 @@ final class HomeViewController: BaseViewController {
     }
 
     @objc private func didPressLogout() {
+        presenter.logout()
     }
 }
 

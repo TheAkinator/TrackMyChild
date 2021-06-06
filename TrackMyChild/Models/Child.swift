@@ -9,7 +9,6 @@ import Foundation
 
 struct Child {
     private enum Constants {
-        static let idKey = "id"
         static let fullNameKey = "fullName"
         static let checkedInKey = "checked_in"
     }

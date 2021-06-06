@@ -12,4 +12,5 @@ enum RequestError: Error {
     case requestFailed(Int)
     case underlying(Error)
     case emptyResponse
+    case invalidId
 }

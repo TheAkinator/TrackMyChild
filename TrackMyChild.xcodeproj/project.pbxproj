@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		82195DBA21F36ACBD5D45F67 /* Pods_TrackMyChildTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5873CD292F26D029843FE0 /* Pods_TrackMyChildTests.framework */; };
 		B246892B7DFBBD40D3E4C476 /* Pods_TrackMyChild_TrackMyChildUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F538700E7806498FF72E7E5D /* Pods_TrackMyChild_TrackMyChildUITests.framework */; };
+		F420FD37266D00570080E1A7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420FD36266D00570080E1A7 /* Colors.swift */; };
+		F420FD39266D041E0080E1A7 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420FD38266D041E0080E1A7 /* UIViewController+Extension.swift */; };
+		F420FD3C266D09850080E1A7 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420FD3B266D09850080E1A7 /* UserDefaultsProtocol.swift */; };
+		F420FD3E266D099C0080E1A7 /* KeyValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420FD3D266D099C0080E1A7 /* KeyValueStorage.swift */; };
 		F4CD3963266BA1AF0042D417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD3962266BA1AF0042D417 /* AppDelegate.swift */; };
 		F4CD396C266BA1B10042D417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4CD396B266BA1B10042D417 /* Assets.xcassets */; };
 		F4CD396F266BA1B10042D417 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4CD396D266BA1B10042D417 /* LaunchScreen.storyboard */; };
@@ -38,6 +42,10 @@
 		F4CD39CA266BC62C0042D417 /* ChildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39C9266BC62C0042D417 /* ChildCell.swift */; };
 		F4CD39CC266BECB80042D417 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39CB266BECB80042D417 /* Images.swift */; };
 		F4CD39CF266BF7BA0042D417 /* HighlitableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39CE266BF7BA0042D417 /* HighlitableButton.swift */; };
+		F4CD39D1266CF1330042D417 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39D0266CF1320042D417 /* Teacher.swift */; };
+		F4CD39D4266CF6AA0042D417 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39D3266CF6AA0042D417 /* LoginViewController.swift */; };
+		F4CD39D6266CF6BA0042D417 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39D5266CF6BA0042D417 /* LoginPresenter.swift */; };
+		F4CD39D8266CF6C50042D417 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD39D7266CF6C50042D417 /* LoginCoordinator.swift */; };
 		F831F386AEA0F752DB6395A6 /* Pods_TrackMyChild.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF616020EB3629B5F02BED7 /* Pods_TrackMyChild.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +75,10 @@
 		BBD2A1C96CD8782A6D0A0CA3 /* Pods-TrackMyChildTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMyChildTests.debug.xcconfig"; path = "Target Support Files/Pods-TrackMyChildTests/Pods-TrackMyChildTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DCFA131B7DDCF198CC35549B /* Pods-TrackMyChild.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMyChild.debug.xcconfig"; path = "Target Support Files/Pods-TrackMyChild/Pods-TrackMyChild.debug.xcconfig"; sourceTree = "<group>"; };
 		DE5873CD292F26D029843FE0 /* Pods_TrackMyChildTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackMyChildTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F420FD36266D00570080E1A7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		F420FD38266D041E0080E1A7 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		F420FD3B266D09850080E1A7 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
+		F420FD3D266D099C0080E1A7 /* KeyValueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorage.swift; sourceTree = "<group>"; };
 		F4CD395F266BA1AF0042D417 /* TrackMyChild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackMyChild.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CD3962266BA1AF0042D417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4CD396B266BA1B10042D417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +114,10 @@
 		F4CD39C9266BC62C0042D417 /* ChildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCell.swift; sourceTree = "<group>"; };
 		F4CD39CB266BECB80042D417 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		F4CD39CE266BF7BA0042D417 /* HighlitableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlitableButton.swift; sourceTree = "<group>"; };
+		F4CD39D0266CF1320042D417 /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		F4CD39D3266CF6AA0042D417 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F4CD39D5266CF6BA0042D417 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		F4CD39D7266CF6C50042D417 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		F538700E7806498FF72E7E5D /* Pods_TrackMyChild_TrackMyChildUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackMyChild_TrackMyChildUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -156,6 +172,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F420FD3A266D09720080E1A7 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				F420FD3B266D09850080E1A7 /* UserDefaultsProtocol.swift */,
+				F420FD3D266D099C0080E1A7 /* KeyValueStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		F4CD3956266BA1AF0042D417 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +206,7 @@
 		F4CD3961266BA1AF0042D417 /* TrackMyChild */ = {
 			isa = PBXGroup;
 			children = (
+				F420FD3A266D09720080E1A7 /* Storage */,
 				F4CD39CD266BF7AF0042D417 /* Custom */,
 				F4CD3999266BAA980042D417 /* Modules */,
 				F4CD3998266BAA8C0042D417 /* Models */,
@@ -220,6 +246,7 @@
 				F4CD39A5266BAB800042D417 /* UIView+Extension.swift */,
 				F4CD39B4266BBCCE0042D417 /* UITableView+Extension.swift */,
 				F4CD39BB266BC2820042D417 /* URLResponse+Extension.swift */,
+				F420FD38266D041E0080E1A7 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -241,6 +268,7 @@
 				F4CD39A3266BAB010042D417 /* BaseViewController.swift */,
 				F4CD39B2266BBADF0042D417 /* BaseUITableViewCell.swift */,
 				F4CD39CB266BECB80042D417 /* Images.swift */,
+				F420FD36266D00570080E1A7 /* Colors.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -250,6 +278,7 @@
 			children = (
 				F4CD39A9266BB36D0042D417 /* Classroom.swift */,
 				F4CD39AB266BB3920042D417 /* Child.swift */,
+				F4CD39D0266CF1320042D417 /* Teacher.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -257,6 +286,7 @@
 		F4CD3999266BAA980042D417 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F4CD39D2266CF6970042D417 /* Login */,
 				F4CD399A266BAACB0042D417 /* Home */,
 				F4CD39C1266BC5E10042D417 /* Children */,
 			);
@@ -317,6 +347,16 @@
 				F4CD39CE266BF7BA0042D417 /* HighlitableButton.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		F4CD39D2266CF6970042D417 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F4CD39D3266CF6AA0042D417 /* LoginViewController.swift */,
+				F4CD39D5266CF6BA0042D417 /* LoginPresenter.swift */,
+				F4CD39D7266CF6C50042D417 /* LoginCoordinator.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -577,27 +617,35 @@
 			files = (
 				F4CD39BA266BC2630042D417 /* RequestError.swift in Sources */,
 				F4CD3963266BA1AF0042D417 /* AppDelegate.swift in Sources */,
+				F4CD39D8266CF6C50042D417 /* LoginCoordinator.swift in Sources */,
 				F4CD39A8266BB05A0042D417 /* TrackMyChildAPI.swift in Sources */,
 				F4CD39A6266BAB800042D417 /* UIView+Extension.swift in Sources */,
 				F4CD39C7266BC6160042D417 /* ChildrenCoordinator.swift in Sources */,
 				F4CD39A2266BAAF80042D417 /* Coordinator.swift in Sources */,
 				F4CD39A0266BAAE70042D417 /* HomeCoordinator.swift in Sources */,
+				F420FD3C266D09850080E1A7 /* UserDefaultsProtocol.swift in Sources */,
 				F4CD39B1266BBABA0042D417 /* ClassroomCell.swift in Sources */,
 				F4CD39AE266BB8B90042D417 /* DatabaseReferenceProtocol.swift in Sources */,
+				F420FD3E266D099C0080E1A7 /* KeyValueStorage.swift in Sources */,
 				F4CD399C266BAAD60042D417 /* HomeViewController.swift in Sources */,
 				F4CD39A4266BAB010042D417 /* BaseViewController.swift in Sources */,
 				F4CD39C0266BC3100042D417 /* ClassroomCellPresenter.swift in Sources */,
+				F4CD39D6266CF6BA0042D417 /* LoginPresenter.swift in Sources */,
 				F4CD39C3266BC6010042D417 /* ChildrenViewController.swift in Sources */,
 				F4CD39B8266BC2490042D417 /* ImageFetcher.swift in Sources */,
 				F4CD39B5266BBCCE0042D417 /* UITableView+Extension.swift in Sources */,
 				F4CD39CC266BECB80042D417 /* Images.swift in Sources */,
+				F420FD39266D041E0080E1A7 /* UIViewController+Extension.swift in Sources */,
+				F4CD39D1266CF1330042D417 /* Teacher.swift in Sources */,
 				F4CD39BC266BC2820042D417 /* URLResponse+Extension.swift in Sources */,
+				F420FD37266D00570080E1A7 /* Colors.swift in Sources */,
 				F4CD39CA266BC62C0042D417 /* ChildCell.swift in Sources */,
 				F4CD399E266BAADF0042D417 /* HomePresenter.swift in Sources */,
 				F4CD39CF266BF7BA0042D417 /* HighlitableButton.swift in Sources */,
 				F4CD39AC266BB3920042D417 /* Child.swift in Sources */,
 				F4CD39AA266BB36D0042D417 /* Classroom.swift in Sources */,
 				F4CD39B3266BBADF0042D417 /* BaseUITableViewCell.swift in Sources */,
+				F4CD39D4266CF6AA0042D417 /* LoginViewController.swift in Sources */,
 				F4CD39C5266BC60C0042D417 /* ChildrenPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
