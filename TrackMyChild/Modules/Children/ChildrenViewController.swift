@@ -13,6 +13,8 @@ protocol ChildrenViewProtocol: AnyObject {
 
 final class ChildrenViewController: BaseViewController {
     private enum Constants {
+        static let move = "Move "
+        static let to = "to:"
     }
 
     private var presenter: ChildrenPresenterProtocol
@@ -54,7 +56,10 @@ final class ChildrenViewController: BaseViewController {
     }
 
     private func presentMoveChildActionSheet(child: Child) {
-        let actionSheet = UIAlertController(title: "Move \(child.fullName) to:", message: "", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(
+            title: "\(Constants.move) \(child.fullName) \(Constants.to)", message: "",
+            preferredStyle: .actionSheet
+        )
         presenter.classroomsToMoveIn.forEach { classroom in
             let action = UIAlertAction(title: classroom.name, style: .default) { _ in
                 self.presenter.move(child: child, to: classroom)
