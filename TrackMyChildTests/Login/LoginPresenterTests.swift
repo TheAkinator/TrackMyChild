@@ -26,6 +26,15 @@ final class LoginPresenterTests: XCTestCase {
         sut.view = view
     }
 
+    override func tearDown() {
+        sut = nil
+        coordinator = nil
+        storage = nil
+        trackMyChildAPI = nil
+        view = nil
+        super.tearDown()
+    }
+
     func testLogin_teacher0_succeed() {
         let viewExpectation = expectation(description: "viewExpectation")
         let coordinatorExpectation = expectation(description: "coordinatorExpectation")
@@ -42,9 +51,9 @@ final class LoginPresenterTests: XCTestCase {
 
         // Check if storage contains the fetched teacher
         storage.didSetTeacher = {
-            XCTAssertEqual(self.storage.teacher?.id, self.trackMyChildAPI.teacher.id, "Id is not the same")
-            XCTAssertEqual(self.storage.teacher?.name, self.trackMyChildAPI.teacher.name, "Name is not the same")
-            XCTAssertEqual(self.storage.teacher?.classrooms, self.trackMyChildAPI.teacher.classrooms, "Classrooms are not the same")
+            XCTAssertEqual(self.storage.teacher?.id, self.trackMyChildAPI.teacher0.id, "Id is not the same")
+            XCTAssertEqual(self.storage.teacher?.name, self.trackMyChildAPI.teacher0.name, "Name is not the same")
+            XCTAssertEqual(self.storage.teacher?.classrooms, self.trackMyChildAPI.teacher0.classrooms, "Classrooms are not the same")
         }
 
         sut.login(with: "teacher-0")

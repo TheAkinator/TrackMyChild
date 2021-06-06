@@ -37,10 +37,10 @@ final class HomePresenter: HomePresenterProtocol {
             switch result {
             case .success(let classrooms):
                 self?.classrooms = classrooms
-                self?.view?.didFetchClassrooms()
             case .failure(let error):
                 print(error.localizedDescription)
             }
+            self?.view?.didFetchClassrooms()
         }
     }
 

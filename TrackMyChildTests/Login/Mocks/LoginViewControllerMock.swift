@@ -10,7 +10,7 @@
 final class LoginViewControllerMock: LoginViewProtocol {
     var reachedDidFailLogin: (() -> Void)?
     var reachedDidFinishLogin: (() -> Void)?
-    
+
     func didFailLogin() {
         reachedDidFailLogin?()
     }

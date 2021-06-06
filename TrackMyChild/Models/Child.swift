@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Child {
+struct Child: Equatable {
     private enum Constants {
         static let fullNameKey = "fullName"
         static let checkedInKey = "checked_in"
@@ -17,15 +17,16 @@ struct Child {
     var fullName: String
     var checkedIn: Bool
 
-    init?(data: Dictionary<String, [String: Any]>.Element) {
+    init?(data: [String: [String: Any]]) {
         guard
-            let fullName = data.value[Constants.fullNameKey] as? String,
-            let checkedIn = data.value[Constants.checkedInKey] as? Bool
+            let id = data.first?.key,
+            let fullName = data.first?.value[Constants.fullNameKey] as? String,
+            let checkedIn = data.first?.value[Constants.checkedInKey] as? Bool
         else {
             return nil
         }
 
-        self.id = data.key
+        self.id = id
         self.fullName = fullName
         self.checkedIn = checkedIn
     }

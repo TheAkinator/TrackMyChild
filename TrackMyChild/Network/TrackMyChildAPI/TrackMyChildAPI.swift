@@ -68,7 +68,10 @@ final class TrackMyChildAPI: TrackMyChildAPIProtocol {
                     return
                 }
 
-                var classrooms = classroomsData.compactMap { Classroom(data: $0) }
+                var classrooms = classroomsData.compactMap { classroom -> Classroom? in
+                    let classroomData: [String: [String: Any]] = [classroom.key: classroom.value]
+                    return Classroom(data: classroomData)
+                }
                 classrooms = classrooms.filter { classroomsId.contains($0.id) }
                 classrooms = classrooms.sorted { $0.name < $1.name }
                 completion(.success(classrooms))
