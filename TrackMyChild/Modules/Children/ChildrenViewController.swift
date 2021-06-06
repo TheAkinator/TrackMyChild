@@ -15,6 +15,7 @@ final class ChildrenViewController: BaseViewController {
     private enum Constants {
         static let move = "Move "
         static let to = "to:"
+        static let cancel = "Cancel"
     }
 
     private var presenter: ChildrenPresenterProtocol
@@ -57,7 +58,8 @@ final class ChildrenViewController: BaseViewController {
 
     private func presentMoveChildActionSheet(child: Child) {
         let actionSheet = UIAlertController(
-            title: "\(Constants.move) \(child.fullName) \(Constants.to)", message: "",
+            title: "\(Constants.move) \(child.fullName) \(Constants.to)",
+            message: "",
             preferredStyle: .actionSheet
         )
         presenter.classroomsToMoveIn.forEach { classroom in
@@ -66,6 +68,12 @@ final class ChildrenViewController: BaseViewController {
             }
             actionSheet.addAction(action)
         }
+
+        let action = UIAlertAction(title: Constants.cancel, style: .cancel) { _ in
+            actionSheet.dismiss(animated: true, completion: nil)
+        }
+        actionSheet.addAction(action)
+
         present(actionSheet, animated: true, completion: nil)
     }
 }

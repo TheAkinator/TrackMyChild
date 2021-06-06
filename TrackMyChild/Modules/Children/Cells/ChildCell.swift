@@ -8,7 +8,11 @@
 import UIKit
 
 final class ChildCell: BaseUITableViewCell {
-    var presenter: ChildrenPresenterProtocol?
+    var presenter: ChildrenPresenterProtocol? {
+        didSet {
+            setupViews()
+        }
+    }
 
     var child: Child? {
         didSet {
@@ -74,12 +78,11 @@ final class ChildCell: BaseUITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
         contentView.isUserInteractionEnabled = true
-        setupViews()
         setupActions()
     }
 
     private func setupViews() {
-        addSubviews(nameTitleLabel, nameLabel, checkInTitle, checkInButton, moreButton)
+        addSubviews(nameTitleLabel, nameLabel, checkInTitle, checkInButton)
 
         nameTitleLabel.topAnchor(equalTo: self.topAnchor, constant: 16)
         nameTitleLabel.leadingAnchor(equalTo: self.leadingAnchor, constant: 16)
@@ -97,11 +100,16 @@ final class ChildCell: BaseUITableViewCell {
         checkInButton.heightAnchor(equalTo: 40)
         checkInButton.widthAnchor(equalTo: 40)
 
-        moreButton.centerVertical(equalTo: self.centerYAnchor, constant: 10)
-        moreButton.leadingAnchor(equalTo: checkInButton.trailingAnchor, constant: 10)
-        moreButton.trailingAnchor(equalTo: self.trailingAnchor, constant: 10)
-        moreButton.heightAnchor(equalTo: 40)
-        moreButton.widthAnchor(equalTo: 40)
+        if let classroomsToMoveIn = presenter?.classroomsToMoveIn, !classroomsToMoveIn.isEmpty {
+            addSubview(moreButton)
+            moreButton.centerVertical(equalTo: self.centerYAnchor, constant: 10)
+            moreButton.leadingAnchor(equalTo: checkInButton.trailingAnchor, constant: 10)
+            moreButton.trailingAnchor(equalTo: self.trailingAnchor, constant: 10)
+            moreButton.heightAnchor(equalTo: 40)
+            moreButton.widthAnchor(equalTo: 40)
+        } else {
+            checkInButton.trailingAnchor(equalTo: self.trailingAnchor, constant: 25)
+        }
     }
 
     private func setupActions() {
