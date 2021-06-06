@@ -1,0 +1,229 @@
+{
+  "data": {
+    "center": {
+      "allClassroomsAccessible": true,
+      "classrooms": {
+        "classroom-0": {
+          "children": {
+            "child-0": {
+              "fullName": "Tino Martinez",
+              "checked_in": false
+            },
+            "child-1": {
+              "fullName": "Lola Mendez",
+              "checked_in": false
+            },
+            "child-2": {
+              "fullName": "Amar Bono",
+              "checked_in": false
+            }
+          },
+          "icon": "https://images-na.ssl-images-amazon.com/images/I/81Dl5GdAVkL.png",
+          "id": "classroom-0",
+          "name": "Apple room"
+        },
+        "classroom-1": {
+          "children": {
+            "child-0": {
+              "fullName": "Mohammed Elijah",
+              "checked_in": false
+            },
+            "child-1": {
+              "fullName": "Georgia Holt",
+              "checked_in": false
+            },
+            "child-2": {
+              "fullName": "Greg Allman",
+              "checked_in": false
+            },
+            "child-3": {
+              "fullName": "John Paul",
+              "checked_in": false
+            },
+            "child-4": {
+              "fullName": "Gilbert Hartmann",
+              "checked_in": false
+            },
+            "child-5": {
+              "fullName": "Ada Lovelace",
+              "checked_in": false
+            }
+          },
+          "icon": "https://dourados.saofranciscoonline.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/a/banana-nanica-kg-0000000028158.jpg",
+          "id": "classroom-1",
+          "name": "Banana room"
+        },
+        "classroom-2": {
+          "children": {
+            "child-0": {
+              "fullName": "Sam Shepherd",
+              "checked_in": false
+            },
+            "child-1": {
+              "fullName": "Clementine West",
+              "checked_in": false
+            },
+            "child-2": {
+              "fullName": "Tim Draino",
+              "checked_in": false
+            },
+            "child-3": {
+              "fullName": "Olivia Rouse",
+              "checked_in": false
+            },
+            "child-4": {
+              "fullName": "Darryl Joseph",
+              "checked_in": false
+            },
+            "child-5": {
+              "fullName": "Pravin Maz",
+              "checked_in": false
+            },
+            "child-6": {
+              "fullName": "Calvin Klutz",
+              "checked_in": false
+            },
+            "child-7": {
+              "fullName": "Jim Halpert",
+              "checked_in": false
+            },
+            "child-8": {
+              "fullName": "Tilda Munz",
+              "checked_in": false
+            },
+            "child-9": {
+              "fullName": "Heidi Moritz",
+              "checked_in": false
+            },
+            "child-10": {
+              "fullName": "Alex Jones",
+              "checked_in": false
+            },
+            "child-11": {
+              "fullName": "Jackson Jamison",
+              "checked_in": false
+            },
+            "child-12": {
+              "fullName": "Jamie Oliver",
+              "checked_in": false
+            },
+            "child-13": {
+              "fullName": "James Neal",
+              "checked_in": false
+            },
+            "child-14": {
+              "fullName": "Julia Z",
+              "checked_in": false
+            },
+            "child-15": {
+              "fullName": "Lisa Xu",
+              "checked_in": false
+            },
+            "child-16": {
+              "fullName": "Mark Johnson",
+              "checked_in": false
+            },
+            "child-17": {
+              "fullName": "Jeff Miller",
+              "checked_in": false
+            },
+            "child-18": {
+              "fullName": "Sana Payne",
+              "checked_in": false
+            },
+            "child-19": {
+              "fullName": "John Patterson",
+              "checked_in": false
+            }
+          },
+          "icon": "https://static.libertyprim.com/files/familles/cerise-large.jpg?1569271737",
+          "id": "classroom-2",
+          "name": "Chery room"
+        },
+        "classroom-3": {
+          "children": {},
+          "icon": "https://sc04.alicdn.com/kf/Uc87eb579c0a84f4cb15ebffeb4463eabd.jpg",
+          "id": "classroom-3",
+          "name": "Dragon fruit room "
+        },
+        "classroom-4": {
+          "children": {
+            "child-0": {
+              "fullName": "Peter Rabbit",
+              "checked_in": false
+            },
+            "child-1": {
+              "fullName": "Louis Douglas",
+              "checked_in": false
+            },
+            "child-2": {
+              "fullName": "Park Lee",
+              "checked_in": false
+            },
+            "child-3": {
+              "fullName": "Britney Spears",
+              "checked_in": false
+            },
+            "child-4": {
+              "fullName": "Jenny Jackson",
+              "checked_in": false
+            },
+            "child-5": {
+              "fullName": "Joseph Miller",
+              "checked_in": false
+            },
+            "child-6": {
+              "fullName": "Cristian Vakeb",
+              "checked_in": false
+            },
+            "child-7": {
+              "fullName": "Marco Polo",
+              "checked_in": false
+            },
+            "child-8": {
+              "fullName": "Trevor Poke",
+              "checked_in": false
+            },
+            "child-9": {
+              "fullName": "Jennifer Gates",
+              "checked_in": false
+            },
+            "child-10": {
+              "fullName": "Angel Pickles",
+              "checked_in": false
+            },
+            "child-11": {
+              "fullName": "Satvik Daly",
+              "checked_in": false
+            }
+          },
+          "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Egg_fruit_DS.jpg",
+          "id": "classroom-4",
+          "name": "Eggfruit room"
+        }
+      },
+      "id": "1",
+      "name": "Test Center",
+      "teachers": {
+        "teacher-0": {
+          "classrooms": [
+            "classroom-0",
+            "classroom-1",
+            "classroom-2",
+            "classroom-3",
+            "classroom-4"
+          ],
+          "name": "Arthur"
+        },
+        "teacher-1": {
+          "classrooms": ["classroom-2"],
+          "name": "Raul"
+        },
+        "teacher-2": {
+          "classrooms": ["classroom-4"],
+          "name": "Bob"
+        }
+      }
+    }
+  }
+}
