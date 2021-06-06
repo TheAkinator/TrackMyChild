@@ -41,6 +41,6 @@ final class HomePresenter: HomePresenterProtocol {
 
     func didPressCellAt(indexPath: IndexPath) {
         let classroom = classrooms[indexPath.row]
-        coordinator?.navigateToChildren(with: classroom)
+        coordinator?.navigateToChildren(with: classroom, allClassrooms: classrooms)
     }
 }

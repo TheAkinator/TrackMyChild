@@ -14,6 +14,13 @@ enum ConstraintRelation {
 }
 
 extension UIView {
+    func addSubviews(_ views: UIView...) {
+        views.forEach {
+            addSubview($0)
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
+
     var parentViewController: UIViewController? {
         sequence(first: self) { $0.next }
             .first { $0 is UIViewController }

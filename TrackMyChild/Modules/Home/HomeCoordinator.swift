@@ -8,7 +8,7 @@
 import UIKit
 
 protocol HomeCoordinatorProtocol: BasicCoordinator {
-    func navigateToChildren(with classroom: Classroom)
+    func navigateToChildren(with selectedClassroom: Classroom, allClassrooms: [Classroom])
 }
 
 final class HomeCoordinator: BasicCoordinator, HomeCoordinatorProtocol {
@@ -28,8 +28,8 @@ final class HomeCoordinator: BasicCoordinator, HomeCoordinatorProtocol {
         window.makeKeyAndVisible()
     }
 
-    func navigateToChildren(with classroom: Classroom) {
-        let coordinator = ChildrenCoordinator(classroom: classroom)
+    func navigateToChildren(with selectedClassroom: Classroom, allClassrooms: [Classroom]) {
+        let coordinator = ChildrenCoordinator(currentClassroom: selectedClassroom, allClassrooms: allClassrooms)
         start(coordinator: coordinator)
     }
 }

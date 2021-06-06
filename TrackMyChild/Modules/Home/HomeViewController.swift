@@ -32,6 +32,13 @@ final class HomeViewController: BaseViewController {
         return tableView
     }()
 
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.style = .gray
+        indicator.startAnimating()
+        return indicator
+    }()
+
     private lazy var logoutButton: UIBarButtonItem = {
         UIBarButtonItem(title: "logout", style: .plain, target: self, action: #selector(didPressLogout))
     }()
@@ -51,14 +58,19 @@ final class HomeViewController: BaseViewController {
     private func setupNavigationBar() {
         title = Constants.title
         navigationItem.leftBarButtonItem = logoutButton
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     private func setupViews() {
         view.addSubview(tableView)
         tableView.topAnchor(equalTo: view.topAnchor)
-        tableView.leadingAnchor(equalTo: view.leadingAnchor)
+        tableView.leadingAnchor(equalTo: view.safeLeadingAnchor)
         tableView.bottomAnchor(equalTo: view.bottomAnchor)
-        tableView.trailingAnchor(equalTo: view.trailingAnchor)
+        tableView.trailingAnchor(equalTo: view.safeTrailingAnchor)
+
+        view .addSubview(activityIndicator)
+        activityIndicator.centerVertical(equalTo: view.centerYAnchor)
+        activityIndicator.centerHorizontal(equalTo: view.centerXAnchor)
     }
 
     @objc private func didPressLogout() {
@@ -86,5 +98,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: HomeViewProtocol {
     func didFetchClassrooms() {
         tableView.reloadData()
+        activityIndicator.stopAnimating()
     }
 }

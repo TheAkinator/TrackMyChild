@@ -8,33 +8,54 @@
 import UIKit
 
 protocol ChildrenPresenterProtocol {
+    var classroomName: String { get }
+    var classroomsToMoveIn: [Classroom] { get }
     var children: [Child] { get }
-    func toogleCheckInFor(indexPath: IndexPath)
+
+    func toogleCheckInFor(child: Child)
+    func move(child: Child, to classroom: Classroom)
 }
 
 final class ChildrenPresenter: ChildrenPresenterProtocol {
     weak var coordinator: ChildrenCoordinator?
     weak var view: ChildrenViewProtocol?
     private let trackMyChildAPI: TrackMyChildAPIProtocol
-    var classroom: Classroom
+    private var currentClassroom: Classroom
+    private var allClassrooms: [Classroom]
 
     init(
         coordinator: ChildrenCoordinator,
-        classroom: Classroom,
+        currentClassroom: Classroom,
+        allClassrooms: [Classroom],
         trackMyChildAPI: TrackMyChildAPIProtocol = TrackMyChildAPI()
     ) {
         self.coordinator = coordinator
-        self.classroom = classroom
+        self.currentClassroom = currentClassroom
+        self.allClassrooms = allClassrooms
         self.trackMyChildAPI = trackMyChildAPI
     }
 
-    var children: [Child] {
-        classroom.children
+    var classroomName: String {
+        currentClassroom.name
     }
 
-    func toogleCheckInFor(indexPath: IndexPath) {
-        classroom.children[indexPath.row].checkedIn.toggle()
-        let child = classroom.children[indexPath.row]
-        trackMyChildAPI.setCheckInTo(child.checkedIn, for: child, in: classroom)
+    var children: [Child] {
+        currentClassroom.children ?? []
+    }
+
+    var classroomsToMoveIn: [Classroom] {
+        allClassrooms.filter { $0.id != currentClassroom.id }
+    }
+
+    func toogleCheckInFor(child: Child) {
+        let checkedIn = child.checkedIn
+        trackMyChildAPI.setCheckInTo(checkedIn, for: child, in: currentClassroom)
+    }
+
+    func move(child: Child, to classroom: Classroom) {
+        trackMyChildAPI.move(child: child, from: currentClassroom, to: classroom) {
+            self.currentClassroom.children = self.currentClassroom.children?.filter { $0.id != child.id }
+            self.view?.didMoveChild()
+        }
     }
 }

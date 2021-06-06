@@ -8,12 +8,11 @@
 import UIKit
 
 protocol ChildrenViewProtocol: AnyObject {
-    func didFetchClassrooms()
+    func didMoveChild()
 }
 
 final class ChildrenViewController: BaseViewController {
     private enum Constants {
-        static let title = "Children"
     }
 
     private var presenter: ChildrenPresenterProtocol
@@ -25,7 +24,6 @@ final class ChildrenViewController: BaseViewController {
         } else {
             tableView = UITableView(frame: .zero, style: .grouped)
         }
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(ChildCell.self)
@@ -44,7 +42,7 @@ final class ChildrenViewController: BaseViewController {
     }
 
     private func setupNavigationBar() {
-        title = Constants.title
+        title = presenter.classroomName
     }
 
     private func setupViews() {
@@ -55,11 +53,19 @@ final class ChildrenViewController: BaseViewController {
         tableView.trailingAnchor(equalTo: view.trailingAnchor)
     }
 
-    @objc private func didPressLogout() {
+    private func presentMoveChildActionSheet(child: Child) {
+        let actionSheet = UIAlertController(title: "Move \(child.fullName) to:", message: "", preferredStyle: .actionSheet)
+        presenter.classroomsToMoveIn.forEach { classroom in
+            let action = UIAlertAction(title: classroom.name, style: .default) { _ in
+                self.presenter.move(child: child, to: classroom)
+            }
+            actionSheet.addAction(action)
+        }
+        present(actionSheet, animated: true, completion: nil)
     }
 }
 
-extension ChildrenViewController: UITableViewDelegate, UITableViewDataSource {
+extension ChildrenViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         presenter.children.count
     }
@@ -67,20 +73,17 @@ extension ChildrenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as ChildCell
         let child = presenter.children[indexPath.row]
+        cell.presenter = presenter
         cell.child = child
+        cell.moreButtonAction = { child in
+            self.presentMoveChildActionSheet(child: child)
+        }
         return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let cell = tableView.cellForRow(at: indexPath) as? ChildCell
-        cell?.toggleCheckIn()
-        presenter.toogleCheckInFor(indexPath: indexPath)
     }
 }
 
-extension ChildrenViewController: HomeViewProtocol {
-    func didFetchClassrooms() {
+extension ChildrenViewController: ChildrenViewProtocol {
+    func didMoveChild() {
         tableView.reloadData()
     }
 }

@@ -29,7 +29,11 @@ final class ClassroomCellPresenter: ClassroomCellPresenterProtocol {
     }
 
     func fetchImage(completion: @escaping (Result<Data, RequestError>) -> Void) {
-        guard let url = URL(string: classroom.icon) else { return }
+        guard let icon = classroom.icon,
+            let url = URL(string: icon)
+        else {
+            return
+        }
         imageFetcher.fetchImage(at: url, completion: completion)
     }
 }
